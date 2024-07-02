@@ -7,7 +7,7 @@ var Trip = require('../models/trips');
   router.get("/", (req, res) => { 
      Trip.find().then(data => res.json({ trips: data}));
   })
-  
+
 
   //supprimer un element du panier
   router.delete("/", (req, res) => { 
