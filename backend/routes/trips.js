@@ -32,5 +32,3 @@ var Trip = require('../models/trips');
 
 
 
-// extrait du tableau
-  //[{"departure":"Paris","arrival":"Bruxelles","date":{"$date":"2024-07-02T08:04:41.060Z"},"price":52},{"departure":"Bruxelles","arrival":"Marseille","date":{"$date":"2024-07-02T08:05:20.397Z"},"price":68},
