@@ -6,10 +6,10 @@ var moment = require('moment')
 
 //, date:req.body.date
 //{ field: { $gte: value } }
-router.get("/search", (req, res) => { 
-  let formatedDate = moment(req.body.date)
+router.get("/search/:departure/:arrival/:date", (req, res) => { 
+  let formatedDate = moment(req.params.date)
   let dateSuiv = formatedDate.add(1,"days")
-  Trip.find({ departure:req.body.departure, arrival:req.body.arrival,  date: { $gte: req.body.date }, date: { $lte: dateSuiv }  }).then(dbdata =>{
+  Trip.find({ departure:req.params.departure, arrival:req.params.arrival,  date: { $gte: req.params.date }, date: { $lte: dateSuiv }  }).then(dbdata =>{
     res.json({trips:dbdata})
   })
 });
