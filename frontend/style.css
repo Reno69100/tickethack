@@ -130,3 +130,7 @@ input, button {
     background-color: rgba(80, 169, 144);
     color: white;
 }
+
+.real-date-trip{
+    display: none;
+}

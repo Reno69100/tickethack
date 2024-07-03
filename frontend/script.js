@@ -20,9 +20,11 @@ document.querySelector('#search').addEventListener('click', function () {
                 document.querySelector('#mini-container-result').innerHTML = ''
                 
                 for (let element of data.trips) {
+                    let heure = element.date.toString().substring(16,21)
+
                     document.querySelector('#mini-container-result').innerHTML += `
                         <div class="trip">
-                            <span class="departure-trip">${element.departure}</span> > <span class="arrival-trip">${element.arrival}</span> <span class="date-trip">${element.date}</span> <span class="price-trip">${element.price}</span>€ <button class="book-trip">Book</button>
+                            <span class="departure-trip">${element.departure}</span> > <span class="arrival-trip">${element.arrival}</span> <span class="date-trip">${heure}</span><span class="real-date-trip">${element.date}</span> <span class="price-trip">${element.price}</span>€ <button class="book-trip">Book</button>
                         </div>
                     `
                 }
@@ -34,12 +36,17 @@ document.querySelector('#search').addEventListener('click', function () {
                         let newTemp = {
                             departure: this.parentNode.querySelector('.departure-trip').textContent,
                             arrival: this.parentNode.querySelector('.arrival-trip').textContent,
-                            date: this.parentNode.querySelector('.date-trip').textContent,
+                            date: this.parentNode.querySelector('.real-date-trip').textContent,
                             price: this.parentNode.querySelector('.price-trip').textContent,
                         }
                         
-                        //faire un fetch post
-                        window.location.assign('cart.html')
+                        fetch('http://localhost:3000/temps', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(newTemp)
+                        }).then(response => response.json()).then(() => window.location.assign('cart.html'))
+
+                        
                     })
                 }
             }
