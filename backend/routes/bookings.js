@@ -7,6 +7,7 @@ var Temp = require('../models/temps');
 // const --> tableau pour test POST
 
 
+
 router.get('/purchase',(req, res) =>{
   Temp.find().then(data =>{
     for (let element of data ){                        // ------> req.body.purchase -->  verifier le type et contennu de req.body

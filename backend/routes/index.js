@@ -4,12 +4,20 @@ var arrData = require('../trips')
 var Trip = require('../models/trips')
 var moment = require('moment')
 
-//, date:req.body.date
-//{ field: { $gte: value } }
+// retourner tous les docs de la collection 'trips' qui match : depart, arrivée, date
+// { field: { $gte: value } }
+//.toLowerCase()
 router.get("/search/:departure/:arrival/:date", (req, res) => { 
   let formatedDate = moment(req.params.date)
   let dateSuiv = formatedDate.add(1,"days")
-  Trip.find({ departure:req.params.departure, arrival:req.params.arrival,  date: { $gte: req.params.date }, date: { $lte: dateSuiv }  }).then(dbdata =>{
+  let formatedDeparture = req.params.departure.toLowerCase()
+  formatedDeparture = formatedDeparture[0].toUpperCase() + formatedDeparture.slice(1)
+
+  let formatedArrivale = req.params.arrival.toLowerCase()
+  formatedArrivale = formatedArrivale[0].toUpperCase() + formatedArrivale.slice(1)
+
+  Trip.find({ departure:formatedDeparture, arrival:formatedArrivale,  date: {$gte: req.params.date}, date:{$lte: dateSuiv}  }).then(dbdata => {        //{ departure:req.params.departure.toLowerCase(), arrival:req.params.arrival.toLowerCase(),  date: { $gte: req.params.date }, date: { $lte: dateSuiv }  }
+    //console.log(dbdata)
     res.json({trips:dbdata})
   })
 });
