@@ -74,8 +74,8 @@ body {
     border: 1px solid white;
     border-radius: 10px;
     background-color: white;
-    width: 250px;
-    height: 280px;
+    width: 280px;
+    height: 310px;
     padding: 15px;
     margin-right: 150px;
 }
@@ -88,7 +88,7 @@ input, button {
 }
 
 #arrival {
-    margin-bottom: 40px;
+    margin-bottom: 80px;
 }
 
 #search {
@@ -106,8 +106,8 @@ input, button {
     border: 1px solid white;
     border-radius: 10px;
     background-color: white;
-    width: 250px;
-    height: 280px;
+    width: 280px;
+    height: 310px;
     padding: 15px;
 }
 
@@ -117,18 +117,25 @@ input, button {
 }
 
 .trip {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
     background-color: rgba(234, 230, 230, 0.456);
     border: 1px solid rgba(234, 230, 230, 0.456);
     border-radius: 5px;
     margin-bottom: 15px;
-    padding: 5px 0px 5px 20px;
+    padding: 5px 0px 5px 5px;
     font-size: 14px;
+    width: 95%;
 }
 
 .trip > button {
     padding: 5px;
     background-color: rgba(80, 169, 144);
     color: white;
+    margin-right: 10px;
 }
 
 .real-date-trip{

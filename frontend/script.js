@@ -24,7 +24,7 @@ document.querySelector('#search').addEventListener('click', function () {
 
                     document.querySelector('#mini-container-result').innerHTML += `
                         <div class="trip">
-                            <span class="departure-trip">${element.departure}</span> > <span class="arrival-trip">${element.arrival}</span> <span class="date-trip">${heure}</span><span class="real-date-trip">${element.date}</span> <span class="price-trip">${element.price}</span>€ <button class="book-trip">Book</button>
+                            <div><span class="departure-trip">${element.departure}</span> > <span class="arrival-trip">${element.arrival}</span></div> <div><span class="date-trip">${heure}</span></div><span class="real-date-trip">${element.date}</span> <div><span class="price-trip">${element.price}</span>€</div> <button class="book-trip">Book</button>
                         </div>
                     `
                 }
