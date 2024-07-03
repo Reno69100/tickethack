@@ -10,14 +10,7 @@ router.get("/search/:departure/:arrival/:date", (req, res) => {
   let formatedDate = moment(req.params.date)
   let dateSuiv = formatedDate.add(1,"days")
   Trip.find({ departure:req.params.departure, arrival:req.params.arrival,  date: { $gte: req.params.date }, date: { $lte: dateSuiv }  }).then(dbdata =>{
-    let newTab = []
-    for (let element of dbdata) {
-      let heure = element.date.toString().substring(16,21)
-      element.data = heure
-      newTab.push({departure: element.departure, arrival: element.arrival, date: heure, price: element.price})
-    }
-    
-    res.json({trips:newTab})
+    res.json({trips:dbdata})
   })
 });
 
