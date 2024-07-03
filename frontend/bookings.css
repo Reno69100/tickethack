@@ -44,7 +44,7 @@ body {
     background-color: rgba(234, 230, 230, 0.456);
 }
 
-#mini-container-cart {
+#mini-container-bookings {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,22 +58,17 @@ body {
     margin-top: -200px;
 }
 
-#liste-temps {
+#liste-bookings {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
 
     width: 100%;
-    /*border: 1px solid white;
-    border-radius: 10px;
-    background-color: white;
-    padding: 15px;
-    width: 800px;
-    margin-top: -200px;*/
+    margin-bottom: 20px;
 }
 
-.temps {
+.booking {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -86,7 +81,7 @@ body {
     background-color: rgba(234, 230, 230, 0.251);
 }
 
-.temps > button {
+.booking > button {
     background-color: rgba(80, 169, 144);
     color: white;
     border-radius: 5px;
@@ -94,30 +89,7 @@ body {
     border: 1px solid rgba(80, 169, 144);
 }
 
-#total-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    height: 50px;
-    width: 94%;
-    background-color: rgba(0, 21, 62);
-    color: white;
-    padding: 0px 40px 0px 40px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    margin-bottom: -20px;
-}
-
-#total-container > button {
-    color: white;
-    border: 1px solid rgba(80, 169, 144);
-    background-color: rgba(80, 169, 144);
-    border-radius: 5px;
-    padding: 5px 10px 5px 10px;
-}
-
-.id-temps {
-    display: none;
+#green-text {
+    margin-top: 10px;
+    color: rgba(80, 169, 144);
 }
