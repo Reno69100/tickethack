@@ -5,9 +5,10 @@ var logger = require('morgan');
 require('./models/connection');  // ajouté par renaud
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var bookingsRouter = require('./routes/bookings');
 var tripsRouter = require('./routes/trips');  // ajouté par renaud
-var bookingRouter = require('./routes/bookings');  // ajouté par renaud
+var tempsRouter = require('./routes/temps');  // ajouté par renaud
+
 
 var app = express();
 
@@ -22,9 +23,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/trips', tripsRouter);  // ajouté par renaud
-app.use('/bookings', bookingRouter);  // ajouté par renaud
-
+app.use('/bookings', bookingsRouter);  // ajouté par renaud
+app.use('/temps', tempsRouter);  // ajouté par renaud
 
 module.exports = app;

@@ -5,6 +5,7 @@ const bookingSchema = mongoose.Schema({
     depature: String,
     arrival: String,
     date: Date,
+    price: Number,
 
 });
 
