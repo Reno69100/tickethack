@@ -115,3 +115,18 @@ input, button {
     width: 40%;
     height: 40%;
 }
+
+.trip {
+    background-color: rgba(234, 230, 230, 0.456);
+    border: 1px solid rgba(234, 230, 230, 0.456);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px 0px 5px 20px;
+    font-size: 14px;
+}
+
+.trip > button {
+    padding: 5px;
+    background-color: rgba(80, 169, 144);
+    color: white;
+}
