@@ -24,6 +24,11 @@ router.get('/purchase',(req, res) =>{
   })
 })
 
+router.get('/',(req, res) =>{
+  Booking.find().then(data =>res.json({bookings: data}))
+
+})
+
     // router.post('/',(req, res) =>{
     //   let newTrip = new Temp({  
     //     departure: req.body.departure,

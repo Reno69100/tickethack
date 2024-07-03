@@ -20,7 +20,7 @@ document.querySelector('#search').addEventListener('click', function () {
                 document.querySelector('#mini-container-result').innerHTML = ''
                 
                 for (let element of data.trips) {
-                    let heure = element.date.toString().substring(16,21)
+                    let heure = element.date.toString().substring(11,16)
 
                     document.querySelector('#mini-container-result').innerHTML += `
                         <div class="trip">
