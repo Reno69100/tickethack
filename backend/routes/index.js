@@ -15,9 +15,9 @@ router.get("/search/:departure/:arrival/:date", (req, res) => {
 
   let formatedArrivale = req.params.arrival.toLowerCase()
   formatedArrivale = formatedArrivale[0].toUpperCase() + formatedArrivale.slice(1)
-
-  Trip.find({ departure:formatedDeparture, arrival:formatedArrivale,  date: {$gte: req.params.date}, date:{$lte: dateSuiv}  }).then(dbdata => {        //{ departure:req.params.departure.toLowerCase(), arrival:req.params.arrival.toLowerCase(),  date: { $gte: req.params.date }, date: { $lte: dateSuiv }  }
-    console.log(dbdata)
+  console.log(req.params.date, dateSuiv.format())
+  Trip.find({ departure:formatedDeparture, arrival:formatedArrivale,  date: {$gte: req.params.date, $lte: dateSuiv.format()}  }).then(dbdata => {        //{ departure:req.params.departure.toLowerCase(), arrival:req.params.arrival.toLowerCase(),  date: { $gte: req.params.date }, date: { $lte: dateSuiv }  }
+    //console.log(dbdata)
     res.json({trips:dbdata})
   })
 });
