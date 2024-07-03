@@ -18,8 +18,19 @@ router.get('/',(req, res) =>{
   Temp.find().then(data => res.json({cart:data}))
 })
 
-
 //route DELETE pour supprimer un doc de la collection temps
+router.delete('/',(req, res) =>{
+  console.log(req.body._id)
+  Temp.deleteOne({_id:req.body.id}).then( res.json({result:true}))   //_id:req.body._id
+})
+
+
+
+
+
+
+
+
 
   /*
   router.get("/", (req, res) => {
